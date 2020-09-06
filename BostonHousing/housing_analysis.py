@@ -3,13 +3,18 @@ from sklearn.datasets import load_boston
 from matplotlib import pyplot as plt
 import seaborn as sns
 # import sys
+import tensorflow as tf
+from tensorflow import keras
 
 
+##### LOADING DATA ######
 bsdata = load_boston()
 df = pd.DataFrame(bsdata.data, columns=bsdata.feature_names) 
 df['Price'] = bsdata.target
 # print(df)
 
+
+#### CORRELATION TABLE #####
 # obtain correlations
 corr = df.corr()
 # color dataset
@@ -19,11 +24,12 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):  
     print(corr)
 
 
-# low income ratio
-sns.jointplot('LSTAT', 'Price', data=df)
+##### GRAPH SECTION #####
+# # low income ratio
+# sns.jointplot('LSTAT', 'Price', data=df)
 
-# criminal rate n price
-sns.jointplot('CRIM', 'Price', data=df, kind="reg")
+# # criminal rate n price
+# sns.jointplot('CRIM', 'Price', data=df, kind="reg")
 
+# plt.show()
 
-plt.show()

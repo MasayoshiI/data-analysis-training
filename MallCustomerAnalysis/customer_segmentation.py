@@ -134,7 +134,7 @@ class MallCustAnalyzer():
 
 
         for i,c in enumerate(cluster_labels):
-                c_silhouette_vals = silhouette_vals[y_km==c]      # cluster_labelsには 0,1,2が入っている（enumerateなのでiにも0,1,2が入ってる（たまたま））
+                c_silhouette_vals = silhouette_vals[y_km==c] 
                 c_silhouette_vals.sort()
                 # set max val for y axis by adding up the number of samples per cluster
                 y_ax_upper += len(c_silhouette_vals)              
